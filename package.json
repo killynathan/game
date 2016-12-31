@@ -1,0 +1,22 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "browser mmorpg",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killynathan/game.git"
+  },
+  "author": "nate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killynathan/game/issues"
+  },
+  "homepage": "https://github.com/killynathan/game#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
