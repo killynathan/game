@@ -4,7 +4,7 @@
   "description": "browser mmorpg",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
