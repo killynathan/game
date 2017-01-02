@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#wrap {
+	width: 850px;
+	height: 100vh;
+	display: block;
+	overflow: auto;
+	margin: 0 auto;
+	border: solid;
+	position: relative;
+}
+
+#top {
+	width: 100%;
+	height: 40px;
+	border-bottom: solid;
+}
+
+#logo {
+	display: inline;
+}
+
+#top ul {
+	position: absolute;
+	right : 0;
+	display: inline;
+}
+
+#top li {
+	display: inline;
+}
+
+#nav {
+	width: 100px;
+	height: 100%;
+	border-right: solid;
+}
