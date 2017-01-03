@@ -1,0 +1,22 @@
+<style type="text/css">
+	#nav {
+		display: inline-block;
+		width: 100px;
+		height: 100%;
+		border-right: solid;
+	}
+
+	#game {
+		display: inline-block;
+		width: 500px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+	}
+</style>
+
+<div id="nav" style="display: inline-block">
+	{{user.username}}
+</div>
+
+<div ui-view id="game" style="display: inline-block"></div>

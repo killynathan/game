@@ -11,11 +11,18 @@ app.factory('auth', ['$http', function($http) {
 		});
 	};
 
+	auth.login = function(user) {
+		return $http.post('/login', user).success(function(data) {
+			angular.copy(data, auth.user);
+		});
+	};
+
 	return auth;
 }]);
 
-app.controller('MainCtrl', ['$scope', function($scope) {
+app.controller('MainCtrl', ['$scope', 'auth', function($scope, auth) {
 	$scope.test = "nate";
+	$scope.user = auth.user;
 }]);
 
 app.controller('AuthCtrl', ['$scope', 'auth', '$state', '$http', function($scope, auth, $state, $http) {
@@ -38,6 +45,11 @@ app.controller('AuthCtrl', ['$scope', 'auth', '$state', '$http', function($scope
 		});
 		*/
 	};
+
+	$scope.login = function() {
+		auth.login($scope.user);
+		$state.go('game.profile');
+	}
 }]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -45,7 +57,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 	.state('login', {
 		url: '/login',
 		templateUrl: '../partials/login.html',
-		controller: 'MainCtrl'
+		controller: 'AuthCtrl'
 	})
 	.state('register', {
 		url: '/register',
@@ -57,9 +69,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		templateUrl: '../partials/home.html',
 		controller: 'MainCtrl'
 	})
-	.state('home.one', {
-		url: '/one',
-		templateUrl: '../partials/home.one.html'
+	.state('game', {
+		url: '/game',
+		templateUrl: '../partials/game.html',
+		controller: 'MainCtrl'
+	}).
+	state('game.profile', {
+		url: '/profile',
+		templateUrl: '../partials/game.profile.html',
+		controller: 'MainCtrl'
 	});
 
 	$urlRouterProvider.otherwise('login');
