@@ -1,0 +1,51 @@
+<h2>Your Profile</h2>
+<div>	
+	<ul>
+		<li>Name: {{user.username}}</li>
+		<li>Guild: </li>
+		<li>Level: {{user.level}}</li>
+		<li>Exp: {{user.exp}}</li>
+		<li>Energy: {{user.energy}}/100</li>
+		<li>Reputation: {{user.repuration}}</li>
+	</ul>
+</div>
+
+<div>
+	<p>Combat Stats</p>
+	<ul>
+		<li>Agility: {{user.combatstats.agility}}</li>
+		<li>Strength: {{user.combatstats.strength}}</li>
+		<li>Intelligence: {{user.combatstats.intelligence}}</li>
+		<li>Power: {{user.combatstats.power}}</li>
+	</ul>
+</div>
+
+<div>
+	<p>PvP</p>
+	<ul>
+		<li>Rank: {{user.rank}}</li>
+		<li>Win/Loss: {{user.wins}}/{{user.losses}}</li>
+		<li>Battles: {{user.battles}}</li>
+	</ul>
+</div>
+
+<div>
+	<p>Equips</p>
+	<ul>
+		<li>Body: </li>
+		<li>Legs: </li>
+		<li>Feet: </li>
+		<li>Hands: </li>
+		<li>Head: </li>
+	</ul>
+</div>
+
+<div>
+	<p>Inventory</p>
+</div>
+
+<style type="text/css">
+	li {
+		list-style-type: none;
+	}
+</style>

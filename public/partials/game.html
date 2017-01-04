@@ -1,3 +1,26 @@
+<div id="nav" style="display: inline-block">	
+	<div>
+		<ul>
+			<li>{{user.username}}</li>
+			<li>Level: {{user.level}}</li>
+			<li>HP: {{user.hp}}</li>
+			<li>Energy: {{user.energy}}/100</li>
+			<li>gold: {{user.gold}}</li>
+			<li>Artifacts: </li>
+		</ul>
+	</div>
+
+	<div>
+		<ul>
+			<li><a ui-sref="game.profile">Living Area</a></li>
+			<li><a ui-sref="game.map">Map</a></li>
+			<li><a href="">Guild</a></li>
+		</ul>
+	</div>
+</div>
+
+<div ui-view id="game" style="display: inline-block"></div>
+
 <style type="text/css">
 	#nav {
 		display: inline-block;
@@ -14,9 +37,3 @@
 		top: 0;
 	}
 </style>
-
-<div id="nav" style="display: inline-block">
-	{{user.username}}
-</div>
-
-<div ui-view id="game" style="display: inline-block"></div>

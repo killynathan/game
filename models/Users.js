@@ -5,7 +5,32 @@ var UserSchema = new mongoose.Schema({
 	username: {type: String, unique: true},
 	hash: String,
 	salt: String,
-	level: {type: Number, default: 1}
+	level: {type: Number, default: 1},
+	hp: {type: Number, default: 100},
+	exp: {type: Number, default: 0},
+	energy: {type: Number, default: 100},
+	reputation: {type: Number, default: 0},
+	gold: {type: Number, default: 0},
+	agility: {type: Number, default: 0},
+	strength: {type: Number, default: 0},
+	intelligence: {type: Number, default: 0},
+	power: {type: Number, default: 0},
+	wins: {type: Number, default: 0},
+	losses: {type: Number, default: 0},
+	rank: {type: Number, default: 0},
+	battles: {type: Number, default: 0},
+	body: {type: Number, default: 0},
+	legs: {type: Number, default: 0},
+	feet: {type: Number, default: 0},
+	hands: {type: Number, default: 0},
+	head: {type: Number, default: 0},
+	inventory: [{type: Number, default: 0}],
+	combatstats: {
+		agility: {type: Number, default: 0},
+		strength: {type: Number, default: 0},
+		intelligence: {type: Number, default: 0},
+		power: {type: Number, default: 0}
+	}
 });
 
 UserSchema.methods.setPassword = function(password) {

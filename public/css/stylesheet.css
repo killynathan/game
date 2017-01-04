@@ -5,12 +5,13 @@
 
 #wrap {
 	width: 850px;
-	height: 100vh;
+	height: 450px;
 	display: block;
 	overflow: auto;
 	margin: 0 auto;
 	border: solid;
 	position: relative;
+	overflow: auto;
 }
 
 #top {
@@ -34,7 +35,7 @@
 }
 
 #bot {
-	height: 500px;
+	height: 410px;
 	width: 100%;
 	position: relative;
 }
