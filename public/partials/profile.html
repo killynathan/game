@@ -1,35 +1,36 @@
-<h2>Your Profile</h2>
-<div>	
-	<ul>
-		<li>Name: {{user.username}}</li>
-		<li>Guild: </li>
-		<li>Level: {{user.level}}</li>
-		<li>Exp: {{user.exp}}</li>
-		<li>Energy: {{user.energy}}/100</li>
-		<li>Reputation: {{user.repuration}}</li>
-	</ul>
+<h2 id="profileTitle">{{user.username}}</h2>
+<div class="inventoryBlock">
+	<div>	
+		<ul>
+			<li>Level: {{expToLevel()}}</li>
+			<li>Exp: {{user.exp}}</li>
+			<li>Energy: {{user.energy}}/100</li>
+			<li>Reputation: {{user.repuration}}</li>
+			<li>Guild: </li>
+		</ul>
+	</div>
+
+	<div>
+		<p>Combat Stats</p>
+		<ul>
+			<li>Agility: {{user.combatstats.agility}}</li>
+			<li>Strength: {{user.combatstats.strength}}</li>
+			<li>Intelligence: {{user.combatstats.intelligence}}</li>
+			<li>Power: {{user.combatstats.power}}</li>
+		</ul>
+	</div>
+
+	<div>
+		<p>PvP</p>
+		<ul>
+			<li>Rank: {{user.rank}}</li>
+			<li>Win/Loss: {{user.wins}}/{{user.losses}}</li>
+			<li>Battles: {{user.battles}}</li>
+		</ul>
+	</div>
 </div>
 
-<div>
-	<p>Combat Stats</p>
-	<ul>
-		<li>Agility: {{user.combatstats.agility}}</li>
-		<li>Strength: {{user.combatstats.strength}}</li>
-		<li>Intelligence: {{user.combatstats.intelligence}}</li>
-		<li>Power: {{user.combatstats.power}}</li>
-	</ul>
-</div>
-
-<div>
-	<p>PvP</p>
-	<ul>
-		<li>Rank: {{user.rank}}</li>
-		<li>Win/Loss: {{user.wins}}/{{user.losses}}</li>
-		<li>Battles: {{user.battles}}</li>
-	</ul>
-</div>
-
-<div>
+<div class="inventoryBlock">
 	<p>Equips</p>
 	<ul>
 		<li>Body: </li>
@@ -45,7 +46,19 @@
 </div>
 
 <style type="text/css">
+	#profileTitle {
+		text-align: center;
+		margin-top: 10px;
+	}
+
 	li {
 		list-style-type: none;
+		margin-bottom: 0px;
+	}
+
+	.inventoryBlock {
+		display: inline-block;
+		margin-left: 50px;
+
 	}
 </style>

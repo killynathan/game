@@ -1,6 +1,9 @@
 * {
 	margin: 0;
 	padding: 0;
+	text-decoration: none;
+	color: black;
+	font-family: 'Josefin Slab';
 }
 
 #wrap {
@@ -8,29 +11,40 @@
 	height: 450px;
 	display: block;
 	overflow: auto;
-	margin: 0 auto;
+	margin: auto;
 	border: solid;
-	position: relative;
+	position: absolute;
 	overflow: auto;
+
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 #top {
 	width: 100%;
 	height: 40px;
 	border-bottom: solid;
+	background-color: grey;
 }
 
 #logo {
 	display: inline;
+	font-family: 'Cinzel';
+	position: relative;
+	top: 3px;
+	left: 9px;
 }
 
-#top ul {
+#menu {
 	position: absolute;
 	right : 0;
 	display: inline;
+	top: 11px;
 }
 
-#top li {
+#menu li {
 	display: inline;
 }
 
@@ -39,3 +53,4 @@
 	width: 100%;
 	position: relative;
 }
+

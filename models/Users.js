@@ -6,7 +6,6 @@ var UserSchema = new mongoose.Schema({
 	hash: String,
 	salt: String,
 	level: {type: Number, default: 1},
-	hp: {type: Number, default: 100},
 	exp: {type: Number, default: 0},
 	energy: {type: Number, default: 100},
 	reputation: {type: Number, default: 0},
@@ -26,10 +25,11 @@ var UserSchema = new mongoose.Schema({
 	head: {type: Number, default: 0},
 	inventory: [{type: Number, default: 0}],
 	combatstats: {
-		agility: {type: Number, default: 0},
-		strength: {type: Number, default: 0},
-		intelligence: {type: Number, default: 0},
-		power: {type: Number, default: 0}
+		hp: {type: Number, default: 100},
+		agility: {type: Number, default: 1},
+		strength: {type: Number, default: 1},
+		intelligence: {type: Number, default: 1},
+		power: {type: Number, default: 1}
 	}
 });
 

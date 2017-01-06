@@ -1,25 +1,27 @@
-<div id="nav" style="display: inline-block">	
-	<div>
+<div id="nav">	
+	<div id="info">
 		<ul>
-			<li>{{user.username}}</li>
-			<li>Level: {{user.level}}</li>
-			<li>HP: {{user.hp}}</li>
+			<li style="font-weight: bold">{{user.username}}</li>
+			<li>Level: {{expToLevel()}}</li>
+			<li>Exp: {{user.exp}}</li>
+			<li>HP: {{user.combatstats.hp}}</li>
 			<li>Energy: {{user.energy}}/100</li>
 			<li>gold: {{user.gold}}</li>
 			<li>Artifacts: </li>
 		</ul>
 	</div>
 
-	<div>
+	<div id="links">
 		<ul>
-			<li><a ui-sref="game.profile">Living Area</a></li>
-			<li><a ui-sref="game.map">Map</a></li>
-			<li><a href="">Guild</a></li>
+			<li><a ui-sref="game.profile"><div class="linkButton">Profile</div></a></li>
+			<div class="linkButton"><li><a ui-sref="game.map">Map</a></li></div>
+			<div class="linkButton"><li><a href="">Guild</a></li></div>
 		</ul>
 	</div>
 </div>
 
-<div ui-view id="game" style="display: inline-block"></div>
+<div ui-view id="game" style="display: inline-block">
+</div>
 
 <style type="text/css">
 	#nav {
@@ -31,9 +33,34 @@
 
 	#game {
 		display: inline-block;
-		width: 500px;
+		width: 730px;
 		height: 100%;
 		position: absolute;
 		top: 0;
+	}
+
+	#info {
+		margin-top: 10px;
+		width: 100%;
+		border-bottom: solid;
+	}
+
+	#info ul {
+		margin-left: 10px;
+		padding-bottom: 10px;
+	}
+
+	#links {
+	}
+
+	.linkButton {
+		width: 100%;
+		border-bottom: solid;
+		height: 25px;
+	}
+
+	.linkButton li {
+		margin-left: 10px;
+		margin-top: 10px;
 	}
 </style>
