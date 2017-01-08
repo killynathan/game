@@ -11,10 +11,10 @@ gameControllers.controller('MainCtrl', ['$scope', 'auth', '$http', '$state', fun
 	$scope.eventStatus = "placeholder";
 
 	$scope.fight = function(map) {
-		$scope.user.level++;
-		$scope.user.energy = 100;
-		$scope.user.combatstats.hp = 100;
+		$scope.user.energy -= 1;
 		$scope.eventStatus = generateEvent(map, $scope.user);
+		$scope.user.combatstats.hp = 100;
+		//$scope.user.energy = 100;
 		$http.put('/users', $scope.user);
 	};
 
@@ -26,7 +26,25 @@ gameControllers.controller('MainCtrl', ['$scope', 'auth', '$http', '$state', fun
 		return Math.floor(0.5 * Math.sqrt($scope.user.exp));
 	};
 
-	
+	$scope.getEnergyBarLength = function() {
+		return $scope.user.energy / 100 * 108;
+	}
+
+	$scope.getHpBarLength = function() {
+		return $scope.user.combatstats.hp / $scope.user.maxhp * 108;
+	}
+
+	$scope.getExpBarLength = function() {
+		return (($scope.user.exp - $scope.getExpForCurrentLevel()) / ($scope.getExpForNextLevel() - $scope.getExpForCurrentLevel())) * 108;
+	}
+
+	$scope.getExpForNextLevel = function() {
+		return Math.pow((($scope.expToLevel() + 1) * 2), 2);
+	}
+
+	$scope.getExpForCurrentLevel = function() {
+		return Math.pow(($scope.expToLevel() * 2), 2);
+	}
 }]);
 
 gameControllers.controller('AuthCtrl', ['$scope', 'auth', '$state', '$http', function($scope, auth, $state, $http) {
@@ -62,7 +80,7 @@ gameControllers.controller('AuthCtrl', ['$scope', 'auth', '$state', '$http', fun
 }]);
 
 gameControllers.controller('TopCtrl', ['$scope', 'auth', function($scope, auth) {
-	$scope.isLoggedIn = auth.isLoggedIn();
+	$scope.isLoggedIn = auth.isLoggedIn;
 	$scope.logout = function() {
 		auth.logout();
 	};

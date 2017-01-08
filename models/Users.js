@@ -7,6 +7,7 @@ var UserSchema = new mongoose.Schema({
 	salt: String,
 	level: {type: Number, default: 1},
 	exp: {type: Number, default: 0},
+	maxhp: {type: Number, default: 100},
 	energy: {type: Number, default: 100},
 	reputation: {type: Number, default: 0},
 	gold: {type: Number, default: 0},

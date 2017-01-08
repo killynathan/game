@@ -11,20 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel|Josefin+Slab" rel="stylesheet">
 
-
-
-
 </head>
-<body ng-app="game">
+<body ng-app="game" ng-cloak>
 	<div id="wrap">
 		
 		<div id="top" ng-controller="TopCtrl">
 			<h2 id="logo">Browser Quest</h2>
 			<ul id="menu">
 				<li>{{isLoggedIn}}</li>
-				<li><a ui-sref="login" ng-show="!isLoggedIn">login</a></li>
-				<li><a ui-sref="login" ng-click="logout()" ng-show="isLoggedIn">logout</a></li>
-				<li><a ui-sref="register" ng-show="!isLoggedIn">register</a></li>
+				<li><a ui-sref="login" ng-show="!isLoggedIn()">login</a></li>
+				<li><a ui-sref="login" ng-click="logout()" ng-show="isLoggedIn()">logout</a></li>
+				<li><a ui-sref="register" ng-show="!isLoggedIn()">register</a></li>
 			</ul>
 		</div>
 

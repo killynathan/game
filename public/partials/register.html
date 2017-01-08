@@ -3,12 +3,47 @@
 		display: block;
 	}
 </style>
-
-<div style="width: 240px; margin: auto; border: solid">
-	<form ng-submit="register()">
-		<h3>Register</h3>
-		<input type="text" placeholder="Username" ng-model="user.username">
-		<input type="password" placeholder="Password" ng-model="user.password">
-		<button type="submit">Register</button>
-	</form>
+<div id="registerBackground">
+	<div id="register">
+		<form ng-submit="register()">
+			<!--<h1 id="registerTitle">Register</h1>-->
+			<input type="text" placeholder="Username" ng-model="user.username">
+			<input type="password" placeholder="Password" ng-model="user.password">
+			<button type="submit">Register</button> 
+		</form>
+	</div>
 </div>
+
+<style type="text/css">
+	#registerBackground {
+		height: 100%;
+		width: 100%;
+		background-image: url('../data/background4.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#register {
+		text-align: center;
+		margin: 0 auto;
+		width: 220px;
+		height: 130px;
+		position: relative;
+		top: 140px;
+	}
+	#registerTitle {
+		margin-bottom: 20px;
+	}
+	#register input {
+		width: 200px;
+		height: 20px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	#register button {
+		width: 70px;
+		height: 23px;
+		position: relative;
+		left: 142px;
+	}
+</style>

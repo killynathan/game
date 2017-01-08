@@ -4,11 +4,43 @@
 	}
 </style>
 
-<div style="width: 240px; margin: auto; border: solid">
-	<form ng-submit="login()">
-		<h3>Log In</h3>
-		<input type="text" placeholder="Username" ng-model="user.username">
-		<input type="password" placeholder="Password" ng-model="user.password">
-		<button type="submit">Log in</button>
-	</form>
+<div id="loginBackground">
+	<div id="login">
+		<form ng-submit="login()">
+			<input type="text" placeholder="Username" ng-model="user.username">
+			<input type="password" placeholder="Password" ng-model="user.password">
+			<button type="submit">Log in</button>
+		</form>
+	</div>
 </div>
+
+<style type="text/css">
+	#loginBackground {
+		height: 100%;
+		width: 100%;
+		background-image: url('../data/background2.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}	
+	#login {
+		text-align: center;
+		margin: 0 auto;
+		width: 220px;
+		height: 130px;
+		position: relative;
+		top: 140px;
+	}
+	#login input {
+		text-align: center;
+		width: 200px;
+		height: 20px;
+		margin-bottom: 10px;
+	}
+	#login button {
+		width: 70px;
+		height: 23px;
+		position: relative;
+		left: 142px;
+	}
+</style>

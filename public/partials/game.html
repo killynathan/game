@@ -1,53 +1,62 @@
-<div id="nav">	
+<div id="nav" ng-cloak>	
 	<div id="info">
 		<ul>
-			<li style="font-weight: bold">{{user.username}}</li>
-			<li>Level: {{expToLevel()}}</li>
-			<li>Exp: {{user.exp}}</li>
-			<li>HP: {{user.combatstats.hp}}</li>
-			<li>Energy: {{user.energy}}/100</li>
-			<li>gold: {{user.gold}}</li>
-			<li>Artifacts: </li>
+			<li><b>Level:</b> {{expToLevel()}}</li>
+			<li><div style="height: 5px; width: 108px; border: 1px solid"><div style="height: 100%; width: {{getExpBarLength()}}px; background-color: red;"></div></li>
+			<li><b>Exp:</b> {{user.exp}}/{{getExpForNextLevel()}}</li>
+			<li><b>HP:</b> {{user.combatstats.hp}}/{{user.maxhp}}</li>
+			<li><div style="height: 5px; width: 108px; border: 1px solid"><div style="height: 100%; width: {{getHpBarLength()}}px; background-color: red;"></div></li>
+			<li><b>Energy:</b> <span style="font-size: 14px;">{{user.energy}}/100</span></li>
+			<li><div style="height: 5px; width: 108px; border: 1px solid"><div style="height: 100%; width: {{getEnergyBarLength()}}px; background-color: red;"></div></div></li>
+			<li><b>gold:</b> {{user.gold}}</li>
+			<li><b>Artifacts:</b> </li>
 		</ul>
 	</div>
 
 	<div id="links">
 		<ul>
-			<li><a ui-sref="game.profile"><div class="linkButton">Profile</div></a></li>
-			<div class="linkButton"><li><a ui-sref="game.map">Map</a></li></div>
-			<div class="linkButton"><li><a href="">Guild</a></li></div>
+			<li><a ui-sref="game.profile"><div class="linkButton"><p>Profile</p></div></a></li>
+			<li><a ui-sref="game.map"><div class="linkButton"><p>Map</p></div></a></li>
+			<li><a href=""><div class="linkButton"><p>Guild</p></div></a></li>
 		</ul>
 	</div>
 </div>
 
-<div ui-view id="game" style="display: inline-block">
+<div ui-view id="game" style="display: inline-block" ng-cloak>
 </div>
 
 <style type="text/css">
 	#nav {
 		display: inline-block;
-		width: 100px;
+		width: 130px;
 		height: 100%;
-		border-right: solid;
+		background-color: white; #f1f1f1;
+		border-right: solid 2px black;
 	}
 
 	#game {
 		display: inline-block;
-		width: 730px;
+		width: 718.5px;
 		height: 100%;
 		position: absolute;
 		top: 0;
+		overflow: auto;
 	}
 
 	#info {
-		margin-top: 10px;
+		padding-top: 20px;
 		width: 100%;
-		border-bottom: solid;
+		border-bottom: solid 2px;
+		padding-bottom: 10px;
 	}
 
 	#info ul {
 		margin-left: 10px;
 		padding-bottom: 10px;
+	}
+	#info li {
+		margin-top: 2px;
+		list-style-type: none;
 	}
 
 	#links {
@@ -55,12 +64,18 @@
 
 	.linkButton {
 		width: 100%;
-		border-bottom: solid;
+		border-bottom: solid 2px;
 		height: 25px;
+		text-align: center;
 	}
 
-	.linkButton li {
-		margin-left: 10px;
-		margin-top: 10px;
+	.linkButton:hover {
+		background-color: gold;
 	}
+
+	.linkButton p {
+		position: relative;
+		top: 5px;
+	}
+
 </style>

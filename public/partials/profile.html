@@ -2,42 +2,53 @@
 <div class="inventoryBlock">
 	<div>	
 		<ul>
-			<li>Level: {{expToLevel()}}</li>
-			<li>Exp: {{user.exp}}</li>
-			<li>Energy: {{user.energy}}/100</li>
-			<li>Reputation: {{user.repuration}}</li>
-			<li>Guild: </li>
+			<li><b>Level:</b> {{expToLevel()}}</li>
+			<li><b>Hp:</b> {{user.combatstats.hp}}/{{user.maxhp}}</li>
+			<li><b>Exp:</b> {{user.exp}}/{{getExpForNextLevel()}}</li>
+			<li><b>Energy:</b> {{user.energy}}/100</li>
+			<li><b>Reputation:</b> {{user.repuration}}</li>
+			<li><b>Guild:</b> </li>
 		</ul>
 	</div>
 
 	<div>
-		<p>Combat Stats</p>
+		<h3>Combat Stats</h3>
 		<ul>
-			<li>Agility: {{user.combatstats.agility}}</li>
-			<li>Strength: {{user.combatstats.strength}}</li>
-			<li>Intelligence: {{user.combatstats.intelligence}}</li>
-			<li>Power: {{user.combatstats.power}}</li>
+			<li><b>Agility:</b> {{user.combatstats.agility}}</li>
+			<li><b>Strength:</b> {{user.combatstats.strength}}</li>
+			<li><b>Intelligence:</b> {{user.combatstats.intelligence}}</li>
+			<li><b>Power:</b> {{user.combatstats.power}}</li>
 		</ul>
 	</div>
 
 	<div>
-		<p>PvP</p>
+		<h3>PvP</h3>
 		<ul>
-			<li>Rank: {{user.rank}}</li>
-			<li>Win/Loss: {{user.wins}}/{{user.losses}}</li>
-			<li>Battles: {{user.battles}}</li>
+			<li><b>Rank:</b> {{user.rank}}</li>
+			<li><b>Win/Loss:</b> {{user.wins}}/{{user.losses}}</li>
+			<li><b>Battles:</b> {{user.battles}}</li>
 		</ul>
 	</div>
 </div>
 
 <div class="inventoryBlock">
-	<p>Equips</p>
+	<h3>Equips</h3>
 	<ul>
-		<li>Body: </li>
-		<li>Legs: </li>
-		<li>Feet: </li>
-		<li>Hands: </li>
-		<li>Head: </li>
+		<li><b>Body:</b> </li>
+		<li><b>Legs:</b> </li>
+		<li><b>Feet:</b> </li>
+		<li><b>Hands:</b> </li>
+		<li><b>Head:</b> </li>
+	</ul>
+</div>
+
+<div class="inventoryBlock">
+	<h3>Skill Points: {{user.skillpoints}}</h3>
+	<ul>
+		<li>+power: </li>
+		<li>+strength: </li>
+		<li>+intelligence: </li>
+		<li>+agility: </li>
 	</ul>
 </div>
 
