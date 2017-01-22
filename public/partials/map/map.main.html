@@ -2,19 +2,25 @@
 	<div class="banner" id="mainMapBanner">
 		<h1 class="bannerTitle">Map</h1>
 	</div>
-	<h4>So many places to go and so little time!</h4>
-	<ul>
-		<li><a ui-sref="game.lithharbor">Lith Harbor</a></li>
-		<li><a href="">Henessy</a></li>
-		<li><a href="">Perion</a></li>
-		<li><a href="">Kerning City</a></li>
-		<li><a href="">Ellinia</a></li>
-	</ul>
+	<h4 class="description">So many places to go and so little time!</h4>
+	<div class="contentWrapper">
+		<div style="width: 100px; margin: 0 auto">
+			<ul>
+				<li><a ui-sref="game.lithharbor">Lith Harbor</a></li>
+				<li><a ui-sref="game.henessy">Henessy</a></li>
+				<li><a ui-sref="game.perion">Perion</a></li>
+				<li><a ui-sref="game.kerningcity">Kerning City</a></li>
+				<li><a ui-sref="game.ellinia">Ellinia</a></li>
+				<li><a ng-click="getMapContent('main')" ui-sref="game.test">TEST</a></li>
+			</ul>
+		</div>
+	</div>
 </div>
 
 <style type="text/css">
 	#mainMap li {
 		list-style-type: none;
+		margin-bottom: 5px;
 	}
 	#mainMapBanner {
 		background-image: url('../../data/background6.jpg');

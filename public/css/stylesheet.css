@@ -75,3 +75,11 @@
 	position: relative;
 	top: 25px;
 }
+.description {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+.contentWrapper {
+	margin-left: 10px;
+}

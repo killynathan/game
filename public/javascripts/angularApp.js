@@ -26,6 +26,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		url: '/profile',
 		templateUrl: '../partials/profile.html',
 		controller: 'MainCtrl'
+	})
+	.state('game.inventory', {
+		url: '/inventory',
+		templateUrl: '../partials/inventory.html',
+		controller: 'MainCtrl'
 	}).
 	state('game.map', {
 		url: '/map',
@@ -40,6 +45,31 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 	state('game.beach', {
 		url: '/beach',
 		templateUrl: '../partials/map/map.beach.html',
+		controller: 'MainCtrl'
+	}).
+	state('game.henessy', {
+		url: '/henessy',
+		templateUrl: '../partials/map/map.henessy.html',
+		controller: 'MainCtrl'
+	})
+	.state('game.perion', {
+		url: '/perion',
+		templateUrl: '../partials/map/map.perion.html',
+		controller: 'MainCtrl'
+	})
+	.state('game.kerningcity', {
+		url: '/kerningCity',
+		templateUrl: '../partials/map/map.kerningcity.html',
+		controller: 'MainCtrl'
+	})
+	.state('game.ellinia', {
+		url: '/ellinia',
+		templateUrl: '../partials/map/map.ellinia.html',
+		controller: 'MainCtrl'
+	})
+	.state('game.test', {
+		url: '/test',
+		templateUrl: '../partials/map/mapTemplate.html',
 		controller: 'MainCtrl'
 	});
 

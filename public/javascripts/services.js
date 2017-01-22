@@ -41,6 +41,41 @@ gameServices.factory('auth', ['$http', '$window', function($http, $window) {
 	return auth;
 }]);
 
+gameServices.factory('map', [function() {
+	var map = {
+		test: "asdfadf"
+	};
+
+	map.getContent = function(mapName) {
+		return "testtesttest";
+		return {
+					bannerName: "mainMapBanner",
+					bannerTitle: "Map",
+					description: "So many places to go and so little time!",
+					bannerImage: "../../data/background6.jpg",
+					backgroundPostion: "0% 20%",
+					links: [
+
+					]
+				};
+		switch(mapName) {
+			case "main":
+				return {
+					bannerName: "mainMapBanner",
+					bannerTitle: "Map",
+					description: "So many places to go and so little time!",
+					bannerImage: "../../data/background6.jpg",
+					backgroundPostion: "0% 20%",
+					links: [
+
+					]
+				};
+		}
+	};
+
+	return map;
+}]);
+
 gameServices.factory('userChar', ['http', function($http) {
 	var userChar = {};
 

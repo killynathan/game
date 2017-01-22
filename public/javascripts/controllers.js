@@ -1,6 +1,6 @@
 var gameControllers = angular.module('gameControllers', []);
 
-gameControllers.controller('MainCtrl', ['$scope', 'auth', '$http', '$state', function($scope, auth, $http, $state) {
+gameControllers.controller('MainCtrl', ['$scope', 'auth', 'map', '$http', '$state', function($scope, auth, map, $http, $state) {
 	if (!auth.isLoggedIn()) {
 		$state.go('login');
 	}
@@ -20,7 +20,7 @@ gameControllers.controller('MainCtrl', ['$scope', 'auth', '$http', '$state', fun
 
 	$scope.heal = function(amount) {
 
-	}
+	};
 
 	$scope.expToLevel = function() {
 		return Math.floor(0.5 * Math.sqrt($scope.user.exp));
@@ -28,23 +28,31 @@ gameControllers.controller('MainCtrl', ['$scope', 'auth', '$http', '$state', fun
 
 	$scope.getEnergyBarLength = function() {
 		return $scope.user.energy / 100 * 108;
-	}
+	};
 
 	$scope.getHpBarLength = function() {
 		return $scope.user.combatstats.hp / $scope.user.maxhp * 108;
-	}
+	};
 
 	$scope.getExpBarLength = function() {
 		return (($scope.user.exp - $scope.getExpForCurrentLevel()) / ($scope.getExpForNextLevel() - $scope.getExpForCurrentLevel())) * 108;
-	}
+	};
 
 	$scope.getExpForNextLevel = function() {
 		return Math.pow((($scope.expToLevel() + 1) * 2), 2);
-	}
+	};
 
 	$scope.getExpForCurrentLevel = function() {
 		return Math.pow(($scope.expToLevel() * 2), 2);
-	}
+	};
+	
+	$scope.getMapContent = function(mapName) {
+		$scope.mapContent = "b";
+	};
+}]);
+
+gameControllers.controller('MapCtrl', ['$scope', 'auth', function($scope, auth) {
+
 }]);
 
 gameControllers.controller('AuthCtrl', ['$scope', 'auth', '$state', '$http', function($scope, auth, $state, $http) {
